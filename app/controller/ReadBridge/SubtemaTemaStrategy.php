@@ -9,7 +9,7 @@ class SubtemaTemaStrategy implements ReadStrategy{
         "subtema"=>"B"
     ];
     function read($fileRow, TableRow $obj){
-        var_dump($obj);
+
         $valorSubtema = $fileRow[$this->indexes["subtema"]];
         if(ReadUtil::valorValido($valorSubtema)){
             $obj->setIdSubTema($valorSubtema);

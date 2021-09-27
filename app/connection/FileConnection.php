@@ -11,7 +11,8 @@ abstract class FileConnection{
 
     public abstract function read();
     public abstract function connect();
-    public abstract function write($line);
+    public abstract function write($data,$stream);
     public abstract function create();
+    public abstract function closeConnection($stream);
 }
 ?>

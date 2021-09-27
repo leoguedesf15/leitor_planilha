@@ -13,7 +13,7 @@ class SpreadSheetConnection extends FileConnection{
         $sheetData = $spreadsheet->getActiveSheet()->toArray(null, true, true, true);
         return $sheetData;    
     }
-    public function write($lines){
+    public function write($data,$stream){
         //
         return ;
     }
@@ -22,6 +22,10 @@ class SpreadSheetConnection extends FileConnection{
     }
     public function connect(){
         return IOFactory::load($this->path);   
+    }
+    public function closeConnection($stream){
+        // a lib já fecha a conexão automaticamente
+        return ;
     }
 }
 ?>

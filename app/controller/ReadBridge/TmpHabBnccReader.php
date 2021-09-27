@@ -1,7 +1,7 @@
 <?php
 namespace app\controller\ReadBridge;
 use app\controller\ReadBridge\Reader;
-use app\object\TmpCmpGeral;
+use app\object\TmpHabBncc;
 class TmpHabBnccReader extends Reader{
     
     function __construct(){
@@ -13,10 +13,10 @@ class TmpHabBnccReader extends Reader{
         if(ReadUtil::valorValido($valor)){
             $splitItems = $this->hookSplitItems($valor);
             foreach($splitItems as $item){
-                $obj = new TmpCmpGeral();
+                $obj = new TmpHabBncc();
                 $obj = $this->strategy->read($row,$obj);
-                $obj->setIdCompetencia($item);                
-                array_push(Reader::$listaCompGeral,$obj);
+                $obj->setCodHabilidadeBncc($item);                
+                array_push(Reader::$listaHabBncc,$obj);
             }
         } 
     }

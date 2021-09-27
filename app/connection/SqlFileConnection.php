@@ -12,15 +12,17 @@ class SqlFileConnection extends FileConnection{
     public function read(){
         return ;
     }
-    public function write($line){
-        
-        return ;
+    public function write($data,$stream){
+        fwrite($stream,$data);
     }
     public function create(){
         return ; 
     }
     public function connect(){
        return fopen($this->path,$this->readWritableParam);
+    }
+    public function closeConnection($stream){
+        fclose($stream);
     }
 }
 ?>

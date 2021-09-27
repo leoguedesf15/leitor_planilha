@@ -24,8 +24,12 @@ abstract class Reader{
             $readerCmpEspecifica->getData($row);             
         }
 
-
-        var_dump(Reader::$listaCompEspecifica);     
+       
+        return [
+            "compEspecifica"=> Reader::$listaCompEspecifica,
+            "compGeral"=> Reader::$listaCompGeral,
+            "habBncc"=> Reader::$listaHabBncc
+        ];    
     }
    
     protected function hookSplitItems($items){
