@@ -5,7 +5,7 @@ use app\connection\SpreadSheetConnection;
 use app\controller\ReadBridge\TmpHabBnccReader;
 use app\controller\ReadBridge\TmpCmpGeralReader;
 abstract class Reader{
-    private $valueSeparator=",";
+    private $valueSeparator=";";
     protected static $listaCompEspecifica = array();
     protected static $listaCompGeral = array();
     protected static $listaHabBncc = array();

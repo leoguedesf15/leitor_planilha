@@ -27,7 +27,7 @@ class QueryController{
         $this->queryBuilder
                         ->use("ModernaPortal")
                         ->genericCommand("GO")                        
-                        ->genericCommand("SET XACT_ABORT_ON")
+                        ->genericCommand("SET XACT_ABORT ON")
                         ->genericCommand("GO");                
         return $this->queryBuilder;
     }
@@ -39,7 +39,7 @@ class QueryController{
                                 ->genericCommand("GO")
                                 ->createTable($attrEspecs,"#tmpTemaSubtemaCmpAreaBNCC")
                                 ->createTable($attrGeral,"#tmpTemaSubtemaCmpGeral")
-                                ->createTable($attrHabBncc,"#tmpTemaSubtemaBncc");
+                                ->createTable($attrHabBncc,"#tmpTemaSubtemaHabBncc");
                                 foreach($this->listaCmpGeral as $item){                                    
                                     $this->queryBuilder->insert($attrGeral,$item->jsonSerialize(),"#tmpTemaSubtemaCmpGeral");
                                 }

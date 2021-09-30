@@ -15,6 +15,7 @@ class SubtemaTemaStrategy implements ReadStrategy{
             $obj->setIdSubTema($valorSubtema);
         }else{
             $valorTema = $fileRow[$this->indexes["tema"]];
+            if(ReadUtil::valorValido($valorTema))
             $obj->setIdTema($valorTema);
         }
         return $obj;

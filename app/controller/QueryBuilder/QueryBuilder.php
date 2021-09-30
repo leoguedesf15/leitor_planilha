@@ -16,7 +16,7 @@ class QueryBuilder{
             array_push($keys,$attribute['key']);
         }
 
-        $this->query .= " INSERT INTO ".$table_name." ('".implode("', '",$keys)."') VALUES ('";
+        $this->query .= " INSERT INTO ".$table_name." VALUES ('";
         foreach($keys as $key){
             if(isset($obj[$key])){
                 $this->query .=$obj[$key]."','";
